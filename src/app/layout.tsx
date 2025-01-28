@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +26,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* Header */}
+        <header className="w-[90%] mx-auto sm:w-full">
+          <div className="bg-slate-100 w-full h-16 mt-1 border-b border-gray-300 flex items-center justify-between px-4">
+            <div className="flex items-center">
+              <div className="hidden sm:block font-semibold text-2xl ml-2">
+                Logotype
+              </div>
+              <div className="sm:hidden">
+                <RxHamburgerMenu size="30px" />
+              </div>
+            </div>
+            <div className="flex justify-end">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-600 rounded-full flex justify-center items-center font-extrabold text-white text-sm sm:text-2xl">
+                S
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {/* Main Content */}
+        <main>{children}</main>
       </body>
     </html>
   );
