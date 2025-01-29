@@ -141,6 +141,8 @@ export default function Main() {
                 <Button variant="contained">Additional information</Button>
               </div>
             </Grid>
+
+            
           </Grid>
         </Grid>
       </Grid>
